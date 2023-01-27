@@ -8,7 +8,7 @@ Type=simple
 Restart=always
 RestartSec=1
 User=prometheus
-ExecStart=/opt/node_exporter --web.listen-address=:9109
+ExecStart=/opt/node_exporter/node_exporter --web.listen-address=:9109
 
 [Install]
 WantedBy=multi-user.target
