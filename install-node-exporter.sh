@@ -19,8 +19,8 @@ set -e
 02_download_node_exporter() {
     NODE_EXPORTER_VERSION=$( \
         curl -s https://api.github.com/repos/prometheus/node_exporter/releases/latest |\
-    jq -r .tag_name | sed "s/^v//g" )
-    NODE_EXPORTER_URL="https://github.com/prometheus/node_exporter/releases/download/v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz"
+        jq -r .tag_name | sed "s/^v//g" )
+    NODE_EXPORTER_URL="https://github.com/prometheus/node_exporter/releases/download/\v${NODE_EXPORTER_VERSION}/node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64.tar.gz"
     wget ${NODE_EXPORTER_URL} -O /tmp/node_exporter.tar.gz
     tar zxvf /tmp/node_exporter.tar.gz
 }
