@@ -27,13 +27,13 @@ set -e
 
 03_install_node_exporter() {
   useradd prometheus
-  mkdir -p /opt/node-exporter
-  cp node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64/node_exporter /opt/node-exporter
-  chown prometheus:prometheus /opt/node-exporter -R
-  cp node-exporter.service /etc/systemd/system/
+  mkdir -p /opt/node_exporter
+  cp node_exporter-${NODE_EXPORTER_VERSION}.linux-amd64/node_exporter /opt/node_exporter
+  chown prometheus:prometheus /opt/node_exporter -R
+  cp node_exporter.service /etc/systemd/system/
   systemctl daemon-reload
-  systemctl enable node-exporter
-  systemctl start node-exporter
+  systemctl enable node_exporter
+  systemctl start node_exporter
 }
 
 01_install_prereqs
